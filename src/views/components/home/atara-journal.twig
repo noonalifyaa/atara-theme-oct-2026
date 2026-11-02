@@ -2,8 +2,16 @@
 {% set entries = component.articles ?? theme.settings.get('atara_journal_articles') %}
 {% set valid_entries = [] %}
 {% for entry in entries %}
-  {% if entry['articles.title'] and entry['articles.url'] %}
-    {% set valid_entries = valid_entries|merge([entry]) %}
+  {% set card = {
+    'title': entry.title ?: entry['articles.title'],
+    'url': entry.url ?: entry['articles.url'],
+    'image': entry.image ?: entry['articles.image'],
+    'category': entry.category ?: entry['articles.category'],
+    'summary': entry.summary ?: entry['articles.summary']
+  } %}
+  {% set safe_url = card.url starts with 'https://' or (card.url starts with '/' and not (card.url starts with '//')) %}
+  {% if card.title and safe_url %}
+    {% set valid_entries = valid_entries|merge([card]) %}
   {% endif %}
 {% endfor %}
 {% if valid_entries|length %}
@@ -17,13 +25,13 @@
     <div class="at-journal-grid">
       {% for entry in valid_entries|slice(0,3) %}
       <article class="at-journal-card">
-        {% if entry['articles.image'] %}
-          <a class="at-journal-card__image" href="{{ entry['articles.url'] }}" tabindex="-1" aria-hidden="true"><img src="{{ entry['articles.image']|cdn(700) }}" alt="" loading="lazy" width="700" height="460"></a>
+        {% if entry.image %}
+          <a class="at-journal-card__image" href="{{ entry.url }}" tabindex="-1" aria-hidden="true"><img src="{{ entry.image|cdn(700) }}" alt="" loading="lazy" width="700" height="460"></a>
         {% endif %}
         <div class="at-journal-card__body">
-          {% if entry['articles.category'] %}<span class="at-journal-card__category">{{ entry['articles.category'] }}</span>{% endif %}
-          <h3><a href="{{ entry['articles.url'] }}">{{ entry['articles.title'] }}</a></h3>
-          {% if entry['articles.summary'] %}<p>{{ entry['articles.summary'] }}</p>{% endif %}
+          {% if entry.category %}<span class="at-journal-card__category">{{ entry.category }}</span>{% endif %}
+          <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+          {% if entry.summary %}<p>{{ entry.summary }}</p>{% endif %}
         </div>
       </article>
       {% endfor %}
