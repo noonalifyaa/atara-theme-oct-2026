@@ -50,7 +50,7 @@ prayer picks → trust → reviews → help. Switch the setting off to use merch
       <div class="at-catgrid">
         {% for c in cats %}
           <a class="at-catcard" href="{{ c.url }}">
-            <div class="at-catcard__thumb"><img src="{{ ('images/atara-' ~ c.img ~ '.svg')|asset }}" alt="{{ c.n }}" loading="lazy"></div>
+            <div class="at-catcard__thumb"><img src="{{ theme.settings.get('atara_category_images')[loop.index0]['atara_category_images.image'] ?: ('images/atara-' ~ c.img ~ '.svg')|asset }}" alt="{{ c.n }}" loading="lazy"></div>
             <div class="at-catcard__n">{{ c.n }}</div>
           </a>
         {% endfor %}
@@ -131,7 +131,12 @@ prayer picks → trust → reviews → help. Switch the setting off to use merch
   </section>
   {% endif %}
 
-  {# 9 · Help card #}
+  {# 9 · Journal and news from published Atara articles #}
+  {% if store.settings.blog.is_enabled and theme.settings.get('atara_journal_enabled', true) %}
+    {% include 'components.home.atara-journal' with {component: {}, componentId: 'home-journal'} %}
+  {% endif %}
+
+  {# 10 · Help card #}
   <section class="s-block s-block--atara-help" data-testid="store-home-atara-help">
     <div class="container">
       <div class="at-help">

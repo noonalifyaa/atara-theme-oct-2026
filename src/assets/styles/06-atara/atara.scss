@@ -339,10 +339,28 @@
   .at-help span { font-size: 13px; color: var(--at-ink2); }
 
   /* ---------------------------------------------------------------- footer */
+  .at-journal__intro { color: var(--at-ink2); margin: -4px 0 20px; font-size: 15px; line-height: 1.8; }
+  .at-journal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .at-journal-card { overflow: hidden; border: 1px solid var(--at-line); border-radius: var(--at-radius); background: #fff; }
+  .at-journal-card__image { display: block; aspect-ratio: 35 / 23; overflow: hidden; }
+  .at-journal-card__image img { width: 100%; height: 100%; object-fit: cover; }
+  .at-journal-card__body { padding: 20px; }
+  .at-journal-card__category { color: var(--at-olive-dark); font-size: 13px; }
+  .at-journal-card h3 { margin: 8px 0; font-size: 18px; line-height: 1.7; }
+  .at-journal-card p { font-size: 15px; line-height: 1.8; color: var(--at-ink2); }
+  .at-journal-card a:focus-visible { outline: 3px solid var(--at-olive); outline-offset: -3px; }
+  @media (max-width: 767px) { .at-journal-grid { grid-template-columns: 1fr; gap: 16px; } }
+
   .store-footer, footer.store-footer { background: var(--at-olive-dark); color: #fff; }
   .store-footer .store-footer__inner, .footer-is-light .store-footer__inner, .footer-is-dark .store-footer__inner { background: transparent !important; color: #fff; }
   .store-footer a { color: rgba(255,255,255,.78); }
   .store-footer h4, .store-footer .footer-title { color: #fff; font-size: 13px; font-weight: 700; }
+  .at-social-icons { display: block; }
+  .at-social-icons .s-social-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  .at-social-icons .s-social-link a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #fff; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; }
+  .at-social-icons .s-social-link a:hover { background: rgba(255,255,255,.12); opacity: 1; }
+  .at-social-icons .s-social-link a:focus-visible { outline: 3px solid var(--at-orange); outline-offset: 3px; }
+  .at-social-icons .s-social-link a svg { width: 20px; height: 20px; fill: currentColor; }
   .store-footer .at-pay span { background: #fff; color: var(--at-ink); font-size: 10px; font-weight: 600; border-radius: 6px; padding: 5px 8px; }
   .at-footer-legal { border-top: 1px solid rgba(255,255,255,.14); padding-top: 14px; margin-top: 20px; font-size: 11.5px; color: rgba(255,255,255,.6); }
   @media (max-width: 1023px) {

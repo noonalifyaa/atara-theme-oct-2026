@@ -14,7 +14,12 @@
         </a>
         <p class="text-sm leading-6 mb-4 max-w-sm" style="color:rgba(255,255,255,.78)">{{ theme.settings.get('at_tagline') }}</p>
         <salla-payments data-testid="store-footer-payments" class="block mb-4"></salla-payments>
-        <div class="hidden lg:block"><salla-social data-testid="store-footer-social" class="block"></salla-social></div>
+        {# One responsive icon row; accounts remain managed in Salla store settings. #}
+        <salla-social data-testid="store-footer-social" class="at-social-icons">
+          <div slot="social-item">
+            <a href="{link}" target="_blank" rel="noopener noreferrer" aria-label="{type}" title="{type}"><span aria-hidden="true">{icon}</span></a>
+          </div>
+        </salla-social>
       </div>
 
       <div class="at-footer-group">
@@ -37,11 +42,13 @@
       <div class="at-footer-group">
         <h4>أتارا</h4>
         <div class="space-y-2 text-sm">
+          {% if store.settings.blog.is_enabled %}
+            <a class="block" href="{{ link('blog') }}">{{ trans('atara.journal.title') }}</a>
+          {% endif %}
           <a class="block" href="{{ theme.settings.get('at_branch_url') }}"><i class="sicon-location"></i> {{ theme.settings.get('at_branch') }}</a>
           <a class="block" href="tel:{{ theme.settings.get('at_phone') }}">الرقم الموحد <bdi dir="ltr">{{ theme.settings.get('at_phone') }}</bdi></a>
           <a class="block" href="https://wa.me/{{ wa|replace({'+':'',' ':''}) }}" target="_blank" rel="noopener">واتساب <bdi dir="ltr">{{ wa }}</bdi></a>
-          <salla-contacts data-testid="store-footer-contacts" class="at-footer-contacts"></salla-contacts>
-          <div class="lg:hidden contact-social mt-3"><salla-social data-testid="store-footer-social-mobile"></salla-social></div>
+          {% if store.contacts.email %}<a class="block" href="mailto:{{ store.contacts.email }}"><bdi dir="ltr">{{ store.contacts.email }}</bdi></a>{% endif %}
           <salla-trust-badges data-testid="store-footer-trust-badges" dark class="mt-3 block"></salla-trust-badges>
         </div>
       </div>

@@ -1,0 +1,33 @@
+{# Curated links to published Salla articles. No fabricated news or dates. #}
+{% set entries = component.articles ?? theme.settings.get('atara_journal_articles') %}
+{% set valid_entries = [] %}
+{% for entry in entries %}
+  {% if entry['articles.title'] and entry['articles.url'] %}
+    {% set valid_entries = valid_entries|merge([entry]) %}
+  {% endif %}
+{% endfor %}
+{% if valid_entries|length %}
+<section component-id="{{ componentId }}" data-testid="store-home-atara-journal" class="s-block s-block--atara-journal" aria-labelledby="at-journal-title-{{ componentId ?: 'home' }}">
+  <div class="container">
+    <div class="at-sec-head">
+      <h2 id="at-journal-title-{{ componentId ?: 'home' }}">{{ component.title ?: trans('atara.journal.title') }}</h2>
+      <a class="at-link" href="{{ link('blog') }}">{{ trans('atara.journal.view_all') }}</a>
+    </div>
+    <p class="at-journal__intro">{{ component.intro ?: trans('atara.journal.intro') }}</p>
+    <div class="at-journal-grid">
+      {% for entry in valid_entries|slice(0,3) %}
+      <article class="at-journal-card">
+        {% if entry['articles.image'] %}
+          <a class="at-journal-card__image" href="{{ entry['articles.url'] }}" tabindex="-1" aria-hidden="true"><img src="{{ entry['articles.image']|cdn(700) }}" alt="" loading="lazy" width="700" height="460"></a>
+        {% endif %}
+        <div class="at-journal-card__body">
+          {% if entry['articles.category'] %}<span class="at-journal-card__category">{{ entry['articles.category'] }}</span>{% endif %}
+          <h3><a href="{{ entry['articles.url'] }}">{{ entry['articles.title'] }}</a></h3>
+          {% if entry['articles.summary'] %}<p>{{ entry['articles.summary'] }}</p>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
