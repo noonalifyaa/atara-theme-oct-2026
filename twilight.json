@@ -388,7 +388,7 @@
             "format": "image",
             "icon": "sicon-image",
             "required": false,
-            "value": "",
+            "value": "https://cdn.salla.sa/DAZab/ST9E919KfmCOJDcAjveUdhYJNB23TeQ7mY3BSFP9.png",
             "description": "صورة واحدة لمنتج حقيقي (حسب الاستراتيجية). إن تُركت فارغة تُعرض خلفية الثيم."
         },
         {
@@ -453,7 +453,7 @@
             "format": "text",
             "icon": "sicon-format-text-alt",
             "required": false,
-            "value": "قطعتان من الشراشف الإسبانية بـ 196 ر.س",
+            "value": "اكتشفي عروض أتارا",
             "description": "",
             "maxLength": 120
         },
@@ -464,7 +464,7 @@
             "format": "text",
             "icon": "sicon-format-text-alt",
             "required": false,
-            "value": "سعر القطعة الواحدة 110 ر.س · يُطبّق الخصم تلقائيًا عند إضافة قطعتين من الشراشف المشمولة · حتى 7 أكتوبر 2026 · لا يُجمع مع كود خصم آخر",
+            "value": "السعر وشروط العرض موضحة في صفحة كل منتج. تحققي من المنتجات المشمولة قبل إتمام الطلب.",
             "description": "",
             "maxLength": 300
         },
@@ -475,7 +475,7 @@
             "format": "text",
             "icon": "sicon-format-text-alt",
             "required": false,
-            "value": "شاهدي الشراشف المشمولة",
+            "value": "تسوّقي العروض",
             "description": "",
             "maxLength": 40
         },
@@ -497,7 +497,7 @@
             "format": "text",
             "icon": "sicon-format-text-alt",
             "required": false,
-            "value": "920021150",
+            "value": "0536636222",
             "description": "",
             "maxLength": 20
         },
@@ -777,6 +777,161 @@
             "value": "الصور للمنتج الفعلي · لم تُعدَّل الألوان رقميًا",
             "description": null,
             "maxLength": 120
+        },
+        {
+            "type": "boolean",
+            "id": "atara_journal_enabled",
+            "label": "إظهار مجلة أتارا والأخبار في الرئيسية",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true,
+            "icon": "sicon-toggle-off"
+        },
+        {
+            "id": "atara_journal_articles",
+            "type": "collection",
+            "format": "collection",
+            "label": "مقالات مجلة أتارا المختارة",
+            "required": false,
+            "minLength": 0,
+            "maxLength": 3,
+            "item_label": "مقال منشور",
+            "value": [
+                {
+                    "articles.title": "إحرام صلاة نسائي أنيق ومريح",
+                    "articles.url": "https://atara.sa/blog/اختيار-احرام-صلاة-نسائي/a-697835684",
+                    "articles.image": "https://cdn.salla.sa/DAZab/c3bc6b9c-ab95-42ec-a8ed-09babb6b8788-1000x793.65079365079-Jo8ZyU18153DfRrSO0Px2SeugqqDRsGrgecSOyrI.jpg",
+                    "articles.category": "دليل مستلزمات الصلاة",
+                    "articles.summary": "احرام صلاة نسائي من أتارا بوتيك، أناقة عملية وخامة ناعمة تمنحك راحة في كل سجدة."
+                },
+                {
+                    "articles.title": "جلال صلاة دليلك لاختيار أفضل تصميم مريح وأنيق",
+                    "articles.url": "https://atara.sa/blog/جلال-صلاة-نسائي/a-805946457",
+                    "articles.image": "https://cdn.salla.sa/DAZab/29368cdb-efa5-44b7-ae1d-d4d28821d50e-1000x793.65079365079-TyR2L7o1g5Xr4DK8BPoPlMvfzjd38kAfPCtpzNhb.jpg",
+                    "articles.category": "دليل مستلزمات الصلاة",
+                    "articles.summary": "جلال صلاة أنيق ومريح من أتارا بوتيك، خامات فاخرة وتصميم يعكس روحك بكل ركعة."
+                },
+                {
+                    "articles.title": "عطور وبخور مصممة ومختارة بعناية",
+                    "articles.url": "https://atara.sa/blog/عطور-وبخور-مختارة-بعناية/a-316969524",
+                    "articles.image": "https://cdn.salla.sa/DAZab/ec4cbe5b-9696-4d79-a648-d7a0d1b343a0-1000x793.65079365079-wCLWLsJ8kKpdi4BsaroyBYiCiATZFrbkJYw5s8rB.jpg",
+                    "articles.category": "أطياب أتارا",
+                    "articles.summary": "عيشي الفخامة مع عطور ومسك وعود أطياب أتارا... روائح تُعبّر عنك وتُكمل حضورك بلمسة راقية."
+                }
+            ],
+            "fields": [
+                {
+                    "type": "string",
+                    "id": "articles.title",
+                    "label": "عنوان المقال",
+                    "format": "text",
+                    "icon": "sicon-format-text-alt",
+                    "required": false,
+                    "value": "",
+                    "maxLength": 160
+                },
+                {
+                    "type": "string",
+                    "id": "articles.url",
+                    "label": "رابط المقال المنشور",
+                    "format": "text",
+                    "icon": "sicon-format-text-alt",
+                    "required": false,
+                    "value": "",
+                    "maxLength": 500
+                },
+                {
+                    "type": "string",
+                    "id": "articles.image",
+                    "label": "صورة المقال",
+                    "format": "image",
+                    "required": false,
+                    "value": null,
+                    "icon": "sicon-image"
+                },
+                {
+                    "type": "string",
+                    "id": "articles.category",
+                    "label": "التصنيف",
+                    "format": "text",
+                    "icon": "sicon-format-text-alt",
+                    "required": false,
+                    "value": "",
+                    "maxLength": 60
+                },
+                {
+                    "type": "string",
+                    "id": "articles.summary",
+                    "label": "وصف مختصر",
+                    "format": "text",
+                    "icon": "sicon-format-text-alt",
+                    "required": false,
+                    "value": "",
+                    "maxLength": 240
+                }
+            ]
+        },
+        {
+            "id": "atara_category_images",
+            "type": "collection",
+            "format": "collection",
+            "label": "صور التصنيفات الفعلية بالترتيب",
+            "required": false,
+            "minLength": 0,
+            "maxLength": 8,
+            "item_label": "تصنيف",
+            "value": [
+                {
+                    "atara_category_images.title": "شراشف الصلاة",
+                    "atara_category_images.image": "https://cdn.salla.sa/DAZab/ST9E919KfmCOJDcAjveUdhYJNB23TeQ7mY3BSFP9.png"
+                },
+                {
+                    "atara_category_images.title": "سجاجيد الصلاة",
+                    "atara_category_images.image": "https://cdn.salla.sa/DAZab/tZz1cOI2vUB3N2WqRdiKJGsabpD8W6t6g6nL7tfV.jpg"
+                },
+                {
+                    "atara_category_images.title": "جلابيات",
+                    "atara_category_images.image": "https://cdn.salla.sa/DAZab/r3kYsAG0EobVbTvGeKUJ0GDjQDiHCG1SRq7nQmYR.jpg"
+                },
+                {
+                    "atara_category_images.title": "أزياء محجبات",
+                    "atara_category_images.image": "https://cdn.salla.sa/DAZab/LegxHzu0PiRXQY6QUdTRagA0POHtzKWsxsvzW1Im.jpg"
+                },
+                {
+                    "atara_category_images.title": "عبايات الحج والعمرة",
+                    "atara_category_images.image": "https://cdn.salla.sa/DAZab/eTdtQ3u3s6zcfAGFtlDaQGC1rJHhaKVm1R95I7kG.jpg"
+                },
+                {
+                    "atara_category_images.title": "أطقم السفر",
+                    "atara_category_images.image": "https://cdn.salla.sa/DAZab/tHsUiFS88jOehFD7vRFp0oq2QVRIChaJWK4c4zxq.jpg"
+                },
+                {
+                    "atara_category_images.title": "الطرح والإكسسوارات",
+                    "atara_category_images.image": "https://cdn.salla.sa/DAZab/J2vpEXYhAMx2nGNRxD3PTKM2sWsVKY1uMiBQvYtU.jpg"
+                },
+                {
+                    "atara_category_images.title": "الأطياب",
+                    "atara_category_images.image": "https://cdn.salla.sa/DAZab/ZuLuWNGacxYFY3IxdNgPqBOFDXl09S1mNTHcsoek.jpg"
+                }
+            ],
+            "fields": [
+                {
+                    "type": "string",
+                    "id": "atara_category_images.title",
+                    "label": "اسم التصنيف",
+                    "format": "text",
+                    "required": true,
+                    "maxLength": 60
+                },
+                {
+                    "type": "string",
+                    "id": "atara_category_images.image",
+                    "label": "صورة فعلية",
+                    "format": "image",
+                    "required": true
+                }
+            ]
         }
     ],
     "components": [
@@ -2111,6 +2266,101 @@
                     "required": false,
                     "minLength": 1,
                     "maxLength": 30
+                }
+            ]
+        },
+        {
+            "key": "1f596d98-5315-441e-8b4d-66e3b0f34e9b",
+            "title": {
+                "ar": "مجلة أتارا والأخبار",
+                "en": "Atara Journal and News"
+            },
+            "icon": "sicon-document-text",
+            "path": "home.atara-journal",
+            "image": "",
+            "is_default": false,
+            "fields": [
+                {
+                    "type": "string",
+                    "id": "title",
+                    "label": "عنوان القسم",
+                    "format": "text",
+                    "icon": "sicon-format-text-alt",
+                    "required": false,
+                    "value": "مجلة أتارا",
+                    "maxLength": 160
+                },
+                {
+                    "type": "string",
+                    "id": "intro",
+                    "label": "مقدمة القسم",
+                    "format": "text",
+                    "icon": "sicon-format-text-alt",
+                    "required": false,
+                    "value": "دليلك للاختيار والعناية وأخبار أتارا.",
+                    "maxLength": 160
+                },
+                {
+                    "id": "articles",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "المقالات",
+                    "required": false,
+                    "minLength": 0,
+                    "maxLength": 3,
+                    "item_label": "مقال منشور",
+                    "value": [],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "id": "articles.title",
+                            "label": "عنوان المقال",
+                            "format": "text",
+                            "icon": "sicon-format-text-alt",
+                            "required": false,
+                            "value": "",
+                            "maxLength": 160
+                        },
+                        {
+                            "type": "string",
+                            "id": "articles.url",
+                            "label": "رابط المقال المنشور",
+                            "format": "text",
+                            "icon": "sicon-format-text-alt",
+                            "required": false,
+                            "value": "",
+                            "maxLength": 500
+                        },
+                        {
+                            "type": "string",
+                            "id": "articles.image",
+                            "label": "صورة المقال",
+                            "format": "image",
+                            "required": false,
+                            "value": null,
+                            "icon": "sicon-image"
+                        },
+                        {
+                            "type": "string",
+                            "id": "articles.category",
+                            "label": "التصنيف",
+                            "format": "text",
+                            "icon": "sicon-format-text-alt",
+                            "required": false,
+                            "value": "",
+                            "maxLength": 60
+                        },
+                        {
+                            "type": "string",
+                            "id": "articles.summary",
+                            "label": "وصف مختصر",
+                            "format": "text",
+                            "icon": "sicon-format-text-alt",
+                            "required": false,
+                            "value": "",
+                            "maxLength": 240
+                        }
+                    ]
                 }
             ]
         }

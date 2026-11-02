@@ -1,0 +1,21 @@
+{# Real public Atara photography and published article excerpts captured 2 November 2026.
+   Explicitly empty merchant collections remain empty. No prices or stock are copied. #}
+{% if theme.settings.get('atara_category_images') is not iterable %}
+  {{ theme.settings.set('atara_category_images', [
+{'atara_category_images.title': 'شراشف الصلاة', 'atara_category_images.image': 'https://cdn.salla.sa/DAZab/ST9E919KfmCOJDcAjveUdhYJNB23TeQ7mY3BSFP9.png'},
+{'atara_category_images.title': 'سجاجيد الصلاة', 'atara_category_images.image': 'https://cdn.salla.sa/DAZab/tZz1cOI2vUB3N2WqRdiKJGsabpD8W6t6g6nL7tfV.jpg'},
+{'atara_category_images.title': 'جلابيات', 'atara_category_images.image': 'https://cdn.salla.sa/DAZab/r3kYsAG0EobVbTvGeKUJ0GDjQDiHCG1SRq7nQmYR.jpg'},
+{'atara_category_images.title': 'أزياء محجبات', 'atara_category_images.image': 'https://cdn.salla.sa/DAZab/LegxHzu0PiRXQY6QUdTRagA0POHtzKWsxsvzW1Im.jpg'},
+{'atara_category_images.title': 'عبايات الحج والعمرة', 'atara_category_images.image': 'https://cdn.salla.sa/DAZab/eTdtQ3u3s6zcfAGFtlDaQGC1rJHhaKVm1R95I7kG.jpg'},
+{'atara_category_images.title': 'أطقم السفر', 'atara_category_images.image': 'https://cdn.salla.sa/DAZab/tHsUiFS88jOehFD7vRFp0oq2QVRIChaJWK4c4zxq.jpg'},
+{'atara_category_images.title': 'الطرح والإكسسوارات', 'atara_category_images.image': 'https://cdn.salla.sa/DAZab/J2vpEXYhAMx2nGNRxD3PTKM2sWsVKY1uMiBQvYtU.jpg'},
+{'atara_category_images.title': 'الأطياب', 'atara_category_images.image': 'https://cdn.salla.sa/DAZab/ZuLuWNGacxYFY3IxdNgPqBOFDXl09S1mNTHcsoek.jpg'}
+]) }}
+{% endif %}
+{% if theme.settings.get('atara_journal_articles') is not iterable %}
+  {{ theme.settings.set('atara_journal_articles', [
+{'articles.title': 'إحرام صلاة نسائي أنيق ومريح', 'articles.url': 'https://atara.sa/blog/اختيار-احرام-صلاة-نسائي/a-697835684', 'articles.image': 'https://cdn.salla.sa/DAZab/c3bc6b9c-ab95-42ec-a8ed-09babb6b8788-1000x793.65079365079-Jo8ZyU18153DfRrSO0Px2SeugqqDRsGrgecSOyrI.jpg', 'articles.category': 'دليل مستلزمات الصلاة', 'articles.summary': 'احرام صلاة نسائي من أتارا بوتيك، أناقة عملية وخامة ناعمة تمنحك راحة في كل سجدة.'},
+{'articles.title': 'جلال صلاة دليلك لاختيار أفضل تصميم مريح وأنيق', 'articles.url': 'https://atara.sa/blog/جلال-صلاة-نسائي/a-805946457', 'articles.image': 'https://cdn.salla.sa/DAZab/29368cdb-efa5-44b7-ae1d-d4d28821d50e-1000x793.65079365079-TyR2L7o1g5Xr4DK8BPoPlMvfzjd38kAfPCtpzNhb.jpg', 'articles.category': 'دليل مستلزمات الصلاة', 'articles.summary': 'جلال صلاة أنيق ومريح من أتارا بوتيك، خامات فاخرة وتصميم يعكس روحك بكل ركعة.'},
+{'articles.title': 'عطور وبخور مصممة ومختارة بعناية', 'articles.url': 'https://atara.sa/blog/عطور-وبخور-مختارة-بعناية/a-316969524', 'articles.image': 'https://cdn.salla.sa/DAZab/ec4cbe5b-9696-4d79-a648-d7a0d1b343a0-1000x793.65079365079-wCLWLsJ8kKpdi4BsaroyBYiCiATZFrbkJYw5s8rB.jpg', 'articles.category': 'أطياب أتارا', 'articles.summary': 'عيشي الفخامة مع عطور ومسك وعود أطياب أتارا... روائح تُعبّر عنك وتُكمل حضورك بلمسة راقية.'}
+]) }}
+{% endif %}

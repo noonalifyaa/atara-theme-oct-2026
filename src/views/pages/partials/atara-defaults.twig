@@ -5,27 +5,27 @@
   fall back to the copy of the approved redesign (v5, Oct 2026). Merchant values in the editor win.
 #}
 {% set _nav_default = [
-  {'title': 'شراشف الصلاة', 'url': store.url ~ '/search?q=' ~ ('شراشف الصلاة'|url_encode)},
-  {'title': 'سجاجيد الصلاة', 'url': store.url ~ '/search?q=' ~ ('سجاجيد الصلاة'|url_encode)},
+  {'title': 'شراشف الصلاة', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/prayer-dresses/c1949976444') : (store.url ~ '/search?q=' ~ ('شراشف الصلاة'|url_encode)))},
+  {'title': 'سجاجيد الصلاة', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/prayer-rugs/c850756087') : (store.url ~ '/search?q=' ~ ('سجاجيد الصلاة'|url_encode)))},
   {'title': 'الأزياء', 'url': store.url ~ '/search?q=' ~ ('الأزياء'|url_encode), 'children': [
-    {'title': 'جلابيات', 'url': store.url ~ '/search?q=' ~ ('جلابيات'|url_encode)},
-    {'title': 'أزياء محجبات', 'url': store.url ~ '/search?q=' ~ ('محجبات'|url_encode)},
-    {'title': 'عبايات الحج والعمرة', 'url': store.url ~ '/search?q=' ~ ('عبايات'|url_encode)},
-    {'title': 'أطقم السفر', 'url': store.url ~ '/search?q=' ~ ('السفر'|url_encode)},
-    {'title': 'أطقم تحت العباية', 'url': store.url ~ '/search?q=' ~ ('تحت العباية'|url_encode)},
-    {'title': 'الزي الموحد', 'url': store.url ~ '/search?q=' ~ ('الزي الموحد'|url_encode)}
+    {'title': 'جلابيات', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/womens-jalabiyas/c1553045417') : (store.url ~ '/search?q=' ~ ('جلابيات'|url_encode)))},
+    {'title': 'أزياء محجبات', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/hijabi-fashion/c727152186') : (store.url ~ '/search?q=' ~ ('محجبات'|url_encode)))},
+    {'title': 'عبايات الحج والعمرة', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/hajj-umrah-abayas/c1555407825') : (store.url ~ '/search?q=' ~ ('عبايات'|url_encode)))},
+    {'title': 'أطقم السفر', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/travel-sets/c2000428240') : (store.url ~ '/search?q=' ~ ('السفر'|url_encode)))},
+    {'title': 'أطقم تحت العباية', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/under-abaya-sets/c1640262945') : (store.url ~ '/search?q=' ~ ('تحت العباية'|url_encode)))},
+    {'title': 'الزي الموحد', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/uniforms/c1514470191') : (store.url ~ '/search?q=' ~ ('الزي الموحد'|url_encode)))}
   ]},
-  {'title': 'الطرح والإكسسوارات', 'url': store.url ~ '/search?q=' ~ ('طرح'|url_encode), 'children': [
-    {'title': 'طرح', 'url': store.url ~ '/search?q=' ~ ('طرح'|url_encode)},
+  {'title': 'الطرح والإكسسوارات', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/hijabs-and-bonnets/c265925647') : (store.url ~ '/search?q=' ~ ('طرح'|url_encode))), 'children': [
+    {'title': 'طرح', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/hijabs-and-bonnets/c265925647') : (store.url ~ '/search?q=' ~ ('طرح'|url_encode)))},
     {'title': 'بندانات', 'url': store.url ~ '/search?q=' ~ ('بندانات'|url_encode)},
-    {'title': 'شنط نسائية', 'url': store.url ~ '/search?q=' ~ ('شنط'|url_encode)},
-    {'title': 'سبح إلكترونية', 'url': store.url ~ '/search?q=' ~ ('سبح'|url_encode)}
+    {'title': 'شنط نسائية', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/womens-bags/c2032030385') : (store.url ~ '/search?q=' ~ ('شنط'|url_encode)))},
+    {'title': 'سبح إلكترونية', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/digital-tasbeeh/c638519044') : (store.url ~ '/search?q=' ~ ('سبح'|url_encode)))}
   ]},
-  {'title': 'الأطياب', 'url': store.url ~ '/search?q=' ~ ('الأطياب'|url_encode)},
-  {'title': 'الهدايا', 'url': store.url ~ '/search?q=' ~ ('هدية'|url_encode), 'children': [
-    {'title': 'باكج الإهداء', 'url': store.url ~ '/search?q=' ~ ('باكج الإهداء'|url_encode)},
-    {'title': 'باكج العروس', 'url': store.url ~ '/search?q=' ~ ('باكج العروس'|url_encode)},
-    {'title': 'توزيعات المناسبات', 'url': store.url ~ '/search?q=' ~ ('توزيعات'|url_encode)},
+  {'title': 'الأطياب', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/atara-perfumes/c1720727839') : (store.url ~ '/search?q=' ~ ('الأطياب'|url_encode)))},
+  {'title': 'الهدايا', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/gift-bundle/c1079436829') : (store.url ~ '/search?q=' ~ ('هدية'|url_encode))), 'children': [
+    {'title': 'باكج الإهداء', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/gift-bundle/c1079436829') : (store.url ~ '/search?q=' ~ ('باكج الإهداء'|url_encode)))},
+    {'title': 'باكج العروس', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/bridal-bundle/c1844356932') : (store.url ~ '/search?q=' ~ ('باكج العروس'|url_encode)))},
+    {'title': 'توزيعات المناسبات', 'url': (store.url starts with 'https://atara.sa' ? (store.url ~ '/occasion-giveaways/c115799659') : (store.url ~ '/search?q=' ~ ('توزيعات'|url_encode)))},
     {'title': 'خدمة التغليف والبطاقة', 'url': store.url ~ '/search?q=' ~ ('تغليف'|url_encode)}
   ]},
   {'title': 'العروض', 'url': store.url ~ '/offers'}
@@ -57,7 +57,7 @@
 {{ theme.settings.set('at_branch_short', theme.settings.get('atara_branch_short') ?: 'فرع جدة — حي الحمراء') }}
 {{ theme.settings.set('at_branch_url', theme.settings.get('atara_branch_url') ?: '#') }}
 {{ theme.settings.set('at_whatsapp', theme.settings.get('atara_whatsapp') ?: '+966536636222') }}
-{{ theme.settings.set('at_phone', theme.settings.get('atara_phone') ?: '920021150') }}
+{{ theme.settings.set('at_phone', theme.settings.get('atara_phone') ?: '0536636222') }}
 {{ theme.settings.set('at_track_url', theme.settings.get('atara_track_url') ?: link('customer/orders')) }}
 {{ theme.settings.set('at_help_url', theme.settings.get('atara_help_url') ?: '#') }}
 {{ theme.settings.set('at_help_title', theme.settings.get('atara_help_title') ?: 'المساعدة') }}
@@ -81,11 +81,13 @@
 {{ theme.settings.set('at_hero_cta1_url', theme.settings.get('atara_hero_cta1_url') ?: _nav[0].url) }}
 {{ theme.settings.set('at_hero_cta2', theme.settings.get('atara_hero_cta2') ?: 'سجاجيد الصلاة') }}
 {{ theme.settings.set('at_hero_cta2_url', theme.settings.get('atara_hero_cta2_url') ?: _nav[1].url) }}
-{{ theme.settings.set('at_hero_image', theme.settings.get('atara_hero_image') ? theme.settings.get('atara_hero_image')|cdn(1400) : 'images/atara-hero.svg'|asset) }}
+{{ theme.settings.set('at_hero_image', theme.settings.get('atara_hero_image') ? theme.settings.get('atara_hero_image')|cdn(1400) : 'https://cdn.salla.sa/DAZab/ST9E919KfmCOJDcAjveUdhYJNB23TeQ7mY3BSFP9.png') }}
 
 {# Offer block (approved copy; terms always visible) #}
 {{ theme.settings.set('at_offer_tag', theme.settings.get('atara_offer_tag') ?: 'عرض محدود') }}
-{{ theme.settings.set('at_offer_title', theme.settings.get('atara_offer_title') ?: 'قطعتان من الشراشف الإسبانية بـ 196 ر.س') }}
-{{ theme.settings.set('at_offer_terms', theme.settings.get('atara_offer_terms') ?: 'سعر القطعة الواحدة 110 ر.س · يُطبّق الخصم تلقائيًا عند إضافة قطعتين من الشراشف المشمولة · حتى 7 أكتوبر 2026 · لا يُجمع مع كود خصم آخر') }}
-{{ theme.settings.set('at_offer_cta', theme.settings.get('atara_offer_cta') ?: 'شاهدي الشراشف المشمولة') }}
+{{ theme.settings.set('at_offer_title', theme.settings.get('atara_offer_title') ?: 'اكتشفي عروض أتارا') }}
+{{ theme.settings.set('at_offer_terms', theme.settings.get('atara_offer_terms') ?: 'السعر وشروط العرض موضحة في صفحة كل منتج. تحققي من المنتجات المشمولة قبل إتمام الطلب.') }}
+{{ theme.settings.set('at_offer_cta', theme.settings.get('atara_offer_cta') ?: 'تسوّقي العروض') }}
 {{ theme.settings.set('at_offer_url', theme.settings.get('atara_offer_url') ?: store.url ~ '/offers') }}
+
+{% include 'pages.partials.atara-real-content' %}

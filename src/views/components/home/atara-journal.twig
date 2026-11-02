@@ -1,0 +1,41 @@
+{# Curated links to published Salla articles. No fabricated news or dates. #}
+{% set entries = component.articles ?? theme.settings.get('atara_journal_articles') %}
+{% set valid_entries = [] %}
+{% for entry in entries %}
+  {% set card = {
+    'title': entry.title ?: entry['articles.title'],
+    'url': entry.url ?: entry['articles.url'],
+    'image': entry.image ?: entry['articles.image'],
+    'category': entry.category ?: entry['articles.category'],
+    'summary': entry.summary ?: entry['articles.summary']
+  } %}
+  {% set safe_url = card.url starts with 'https://' or (card.url starts with '/' and not (card.url starts with '//')) %}
+  {% if card.title and safe_url %}
+    {% set valid_entries = valid_entries|merge([card]) %}
+  {% endif %}
+{% endfor %}
+{% if valid_entries|length %}
+<section component-id="{{ componentId }}" data-testid="store-home-atara-journal" class="s-block s-block--atara-journal" aria-labelledby="at-journal-title-{{ componentId ?: 'home' }}">
+  <div class="container">
+    <div class="at-sec-head">
+      <h2 id="at-journal-title-{{ componentId ?: 'home' }}">{{ component.title ?: trans('atara.journal.title') }}</h2>
+      <a class="at-link" href="{{ link('blog') }}">{{ trans('atara.journal.view_all') }}</a>
+    </div>
+    <p class="at-journal__intro">{{ component.intro ?: trans('atara.journal.intro') }}</p>
+    <div class="at-journal-grid">
+      {% for entry in valid_entries|slice(0,3) %}
+      <article class="at-journal-card">
+        {% if entry.image %}
+          <a class="at-journal-card__image" href="{{ entry.url }}" tabindex="-1" aria-hidden="true"><img src="{{ entry.image|cdn(700) }}" alt="" loading="lazy" width="700" height="460"></a>
+        {% endif %}
+        <div class="at-journal-card__body">
+          {% if entry.category %}<span class="at-journal-card__category">{{ entry.category }}</span>{% endif %}
+          <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+          {% if entry.summary %}<p>{{ entry.summary }}</p>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
